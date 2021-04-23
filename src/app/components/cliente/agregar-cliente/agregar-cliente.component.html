@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row col-6 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form #clienteForm="ngForm" (ngSubmit)="agregar()">
+                    <div class="col-md-12 mb-2">
+                        <label for="">Nombre</label>
+                        <input type="text" name="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="cliente.nombre">
+                    </div>
+                    <div class="col-md-12 mb-2">
+                        <label for="">Apellido paterno</label>
+                        <input type="text" name="ap" placeholder="Apellido paterno" class="form-control" [(ngModel)]="cliente.ap">
+                    </div>
+                    <div class="col-md-12 mb-2">
+                        <label for="">Apellido materno</label>
+                        <input type="text" name="am" placeholder="Apellido materno" class="form-control" [(ngModel)]="cliente.am">
+                    </div>
+                    <div class="col-md-12 mb-2">
+                        <label for="">Fecha de nacimiento</label>
+                        <input type="date" name="fn" class="form-control" [(ngModel)]="cliente.fn">
+                    </div>
+                    <div class="col-md-12 mb-2">
+                        <label for="">Genero</label>
+                        <select name="genero" class="form-control" [(ngModel)]="cliente.genero">
+                            <option value="">Sleccionar genero</option>
+                            <option value="F">Femenino</option>
+                            <option value="M">Masculino</option>
+                        </select>
+                    </div>
+                    <div class="d-grid gab-2">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

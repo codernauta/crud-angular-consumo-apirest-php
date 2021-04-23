@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <a href="/agregar_cliente" class="btn btn-primary">Agregar</a>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <th>#</th>
+                        <th>Nombre cliente</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Genero</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cliente of clientes">
+                            <td>{{cliente.id}}</td>
+                            <td>{{cliente.nombre +' '+ cliente.ap+' '+cliente.am}}</td>
+                            <td>{{cliente.fn}}</td>
+                            <td>{{cliente.genero === 'M' ? 'Masculino' : 'Femenino'}}</td>
+                            <td><a href="/editar_cliente/{{cliente.id}}" class="btn btn-warning text-white">Editar</a></td>
+                            <td><button type="button" class="btn btn-danger" (click)="eliminar(cliente.id)">Eliminar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
